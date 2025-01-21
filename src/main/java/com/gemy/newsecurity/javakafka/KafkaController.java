@@ -15,9 +15,16 @@ public class KafkaController {
         this.kafkaProducer = kafkaProducer;
     }
 
-    @PostMapping("/publish")
-    public String publish(@RequestParam("message") String message) {
-        kafkaProducer.sendMessage("demo-topic", message);
+    @PostMapping("/publish1")
+    public String publish1(@RequestParam("message") String message) {
+        kafkaProducer.sendMessage("User", message);
+        return "Message published successfully";
+    }
+
+
+    @PostMapping("/publish2")
+    public String publish2(@RequestParam("message") String message) {
+        kafkaProducer.sendMessage("Activities", message);
         return "Message published successfully";
     }
 

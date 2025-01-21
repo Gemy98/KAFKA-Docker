@@ -4,10 +4,14 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KafkaConsumer {
+public class KafkaConsumer2 {
 
-    @KafkaListener(topics = "demo-topic", groupId = "group-id")
+
+    @KafkaListener(topics = "User", groupId = "System-Users")
     public void listen(String message) {
-        System.out.println("Received Message: " + message);
+        System.out.println("Received Message: from Consumer 2 " + message);
     }
+
+
+
 }
